@@ -1,0 +1,59 @@
+<div id="read">
+
+    <header class="mui-bar header-bar">
+        <b class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" data-click="back"></b>
+        <h1 class="mui-title">录音</h1>
+    </header>
+    <div class="mui-content">
+        <div class="content-top" style="padding:10px;">
+            <div style="display:flex;flex-wrap: wrap;">
+                <% _.each(data,function(x,i){ %>
+                <div class="card" data-click="playRecord" data-audio="{{x.src}}">
+                    {{x.sound}}
+                </div>
+                <% }) %>
+            </div>
+            <div class="_title">
+                <b></b>&nbsp;&nbsp;<span>完成的录音</span>&nbsp;&nbsp;<b></b>
+            </div>
+        </div>
+
+        <div class="scroll-wrapper">
+            <div class="scroll-content record-list">
+                <% _.each(list,function(x,i){ %>
+                <div class="record-item">
+                    <div class="items">
+                        <div class="contents">
+                            <div class="date">
+                                <span>{{x.record_date}}</span>
+                                <br>
+                                <span>{{x.times}}</span>
+                            </div>
+                            <div class="play" data-click="play" data-index="{{i}}">
+                                <img src="img/play.png" alt="" width="100%">
+                            </div>
+
+                            <div class="trash" data-click="remove" data-index="{{i}}">
+                                <img src="img/trash.png" alt="" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+
+
+        <div style="width:100%;position: absolute;bottom:0;left:0;background:#fff;">
+            <div class="fixed">
+                <audio src="" autoplay controls id="myAudio"></audio>
+                <div class="record-btns">
+                    <div class="record-btn" data-click="start_record">录音</div>
+                    <div class="record-btn" data-click="stop_record">停止</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

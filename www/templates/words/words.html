@@ -1,0 +1,22 @@
+<div id="words">
+    <header class="mui-bar header-bar">
+        <h1 class="mui-title">首页</h1>
+    </header>
+
+    <div class="mui-content">
+        <div data-plug="pullDownRefresh" class="pullDownRefresh"></div>
+        <div class="scroll-wrapper word-list">
+            <div class="scroll-content">
+                <% _.each(word_list,function(x,i){ %>
+                <div class="mui-table-view-cell" data-click="goto" data-page="read" data-text="{{ x }}">
+                    <div class="mui-navigate-right">
+                        <p style="width: 90%;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                            {{ x }}</p>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+
+        </div>
+    </div>
+</div>
